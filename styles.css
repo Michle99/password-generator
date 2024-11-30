@@ -1,0 +1,87 @@
+/*
+
+This CSS file will be included with your plugin, and
+available in the app when your plugin is enabled.
+
+If your plugin does not need CSS, delete this file.
+
+*/
+
+
+/* Scoped Styles for Password Generator Plugin */
+.pgp-modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 90vw;
+    max-width: 500px;
+}
+
+@media (min-width: 600px) {
+    .pgp-modal-content {
+        width: 50vw;
+    }
+}
+
+/* Strength Bar Styles */
+.pgp-strength-bar {
+    display: flex;
+    gap: 2px;
+    margin-top: 8px;
+}
+
+.pgp-strength-segment {
+    flex: 1;
+    height: 8px;
+    background-color: #ddd;
+    border-radius: 2px;
+    transition: background-color 0.3s;
+}
+
+.pgp-strength-segment.filled {
+    background-color: #4caf50;
+}
+
+/* Button Container Styles */
+.pgp-button-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Password Input Styles */
+.pgp-password-input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Strength Label Styles */
+.pgp-strength-label {
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.pgp-strength-label.vulnerable {
+    color: red;
+}
+
+.pgp-strength-label.weak {
+    color: orange;
+}
+
+.pgp-strength-label.strong {
+    color: green;
+}
+
+/* Settings Tab Styles */
+.pgp-settings-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
