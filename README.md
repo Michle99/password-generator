@@ -65,7 +65,7 @@ The **Obsidian Password Generator** plugin is a lightweight and customizable too
 To build and test the plugin locally:
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/obsidian-password-generator.git
+   git clone https://github.com/Michle99/password-generator.git
    cd obsidian-password-generator
    ```
 2. Install dependencies:
@@ -76,7 +76,7 @@ To build and test the plugin locally:
    ```bash
    npm run build
    ```
-4. Copy the `main.js`, `manifest.json`, and `styles.css` files to your `.obsidian/plugins/obsidian-password-generator` folder.
+4. Copy the `main.js`, `manifest.json`, and `styles.css` files to your `.obsidian/plugins/password-generator` folder.
 
 ---
 
@@ -106,7 +106,7 @@ This project is licensed under the [MIT License](https://opensource.org/licenses
 ---
 
 ## Support
-If you encounter any issues or have feature requests, feel free to open an issue on the [GitHub repository](https://github.com/your-repo/obsidian-password-generator). 
+If you encounter any issues or have feature requests, feel free to open an issue on the [GitHub repository](https://github.com/Michle99/password-generator). 
 
 Happy password generating! 🎉
 
