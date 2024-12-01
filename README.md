@@ -2,7 +2,7 @@
 # Password Generator Plugin
 
 ## Overview
-The **Password Generator** plugin is a lightweight and customizable tool that helps users generate secure, random passwords directly within the Obsidian app. The plugin offers advanced options for password generation, evaluates password strength, and includes features like inserting passwords directly into notes.
+The **Password Generator** plugin is a lightweight and customizable tool that helps users generate secure, random passwords. The plugin offers advanced options for password generation, evaluates password strength, and includes features like inserting passwords directly into notes.
 
 ---
 
@@ -14,7 +14,7 @@ The **Password Generator** plugin is a lightweight and customizable tool that he
   - Password strength is categorized as **Vulnerable**, **Weak**, or **Strong**.
   - Strength evaluation considers length, character diversity, and patterns.
 - **Insert Password into Notes**:
-  - Quickly add generated passwords to the active Obsidian note.
+  - Quickly add generated passwords to the active note.
 - **Responsive UI**:
   - Clean and intuitive interface with configurable advanced options.
 - **Real-Time Updates**:
