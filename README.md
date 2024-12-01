@@ -31,7 +31,7 @@ The **Obsidian Password Generator** plugin is a lightweight and customizable too
 4. Click **Install** and enable the plugin.
 
 ### Manual Installation
-1. Download the latest release from the [GitHub repository](https://github.com/your-repo/obsidian-password-generator).
+1. Download the latest release from the [GitHub repository](https://github.com/Michle99/password-generator).
 2. Extract the contents into your Obsidian vault's `plugins` folder:
 ``` 
  <YourVault>/.obsidian/plugins/obsidian-password-generator
