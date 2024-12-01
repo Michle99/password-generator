@@ -29,14 +29,6 @@ The **Password Generator** plugin is a lightweight and customizable tool that he
 2. Search for "Password Generator" in the marketplace.
 3. Click **Install** and enable the plugin.
 
-### Manual Installation
-1. Download the latest release from the [GitHub repository](https://github.com/Michle99/password-generator).
-2. Extract the contents into your vault's `plugins` folder:
-``` 
- <YourVault>/.obsidian/plugins/password-generator
-```
-3. Enable the plugin in **Settings > Community Plugins**.
-
 ---
 
 ## Usage
@@ -75,7 +67,6 @@ To build and test the plugin locally:
    ```bash
    npm run build
    ```
-4. Copy the `main.js`, `manifest.json`, and `styles.css` files to your `.obsidian/plugins/password-generator` folder.
 
 ---
 
