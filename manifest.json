@@ -3,7 +3,7 @@
 	"name": "Password Generator",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Password Generator that helps users generate secure, random passwords directly within the Obsidian app.",
+	"description": "Password Generator that helps users generate secure, random passwords.",
 	"author": "Michle99",
 	"authorUrl": "https://github.com/Michle99",
 	"fundingUrl": "",
