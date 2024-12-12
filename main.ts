@@ -247,11 +247,11 @@ class PasswordModal extends Modal {
             }
         });
 
-        passwordInput.style.marginBottom = '10px';
+        // passwordInput.style.marginBottom = '10px';
 
         // Visibility Toggle
         const visibilityToggle = passwordSection.createEl('button', { cls: 'pgp-visibility-toggle', text: 'Show' });
-        visibilityToggle.style.marginBottom = '10px';
+        // visibilityToggle.style.marginBottom = '10px';
         visibilityToggle.addEventListener('click', () => {
             const currentType = passwordInput.getAttribute('type');
             if (currentType === 'password') {
