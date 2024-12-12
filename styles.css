@@ -58,6 +58,12 @@ If your plugin does not need CSS, delete this file.
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
+	marginBottom: 10px;
+}
+
+/* Visibility Toggle */
+.pgp-visibility-toggle {
+	marginBottom: 10px;
 }
 
 /* Strength Label Styles */
