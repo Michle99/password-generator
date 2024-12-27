@@ -1,3 +1,4 @@
+// main.ts
 /* eslint-disable no-control-regex */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -243,30 +244,28 @@ class PasswordModal extends Modal {
             attr: {
                 type: 'password',
                 value: this.password,
-                readonly: 'true' // Set as string
+                readonly: 'true'
             }
         });
 
-        // passwordInput.style.marginBottom = '10px';
-
         // Visibility Toggle
-        const visibilityToggle = passwordSection.createEl('button', { cls: 'pgp-visibility-toggle', text: 'Show' });
-        // visibilityToggle.style.marginBottom = '10px';
+        const visibilityToggle = passwordSection.createEl('button', { 
+            cls: 'pgp-visibility-toggle', 
+            text: 'Show' 
+        });
+
         visibilityToggle.addEventListener('click', () => {
             const currentType = passwordInput.getAttribute('type');
-            if (currentType === 'password') {
-                passwordInput.setAttribute('type', 'text');
-                visibilityToggle.textContent = 'Hide';
-            } else {
-                passwordInput.setAttribute('type', 'password');
-                visibilityToggle.textContent = 'Show';
-            }
+            passwordInput.setAttribute('type', 
+                currentType === 'password' ? 'text' : 'password');
+            visibilityToggle.textContent = currentType === 'password' ? 'Hide' : 'Show';
         });
 
         // Strength Label
-        // const characterSetCount = this.generator.getCharacterSetCount();
-        // const strengthLabel = getStrengthLabel(this.entropy, characterSetCount);
-        this.strengthLabelElement = container.createEl('p', { text: `Strength: ${getStrengthLabel(this.password)}`, cls: `pgp-strength-label ${getStrengthLabel(this.password).toLowerCase()}` });
+        this.strengthLabelElement = container.createEl('p', { 
+            text: `Strength: ${getStrengthLabel(this.password)}`, 
+            cls: `pgp-strength-label ${getStrengthLabel(this.password).toLowerCase()}` 
+        });
 
         // Button Container
         const buttonContainer = container.createDiv({ cls: 'pgp-button-container' });
@@ -279,13 +278,11 @@ class PasswordModal extends Modal {
             .onClick(async () => {
                 try {
                     await navigator.clipboard.writeText(this.password);
-                    passwordInput.addClass('copied');
-                    setTimeout(() => passwordInput.removeClass('copied'), 500);
                     new Notice('Password copied to clipboard', 2000);
                 } catch (error) {
                     new Notice('Failed to copy password', 2000);
                 }
-            });
+        });
 
         // Regenerate Button
         new ButtonComponent(buttonContainer)
@@ -295,8 +292,6 @@ class PasswordModal extends Modal {
             .onClick(() => {
                 this.generateNewPassword();
                 passwordInput.value = this.password;
-                // Update Strength Label
-                // const newCharacterSetCount = this.generator.getCharacterSetCount();
                 const newStrengthLabel = getStrengthLabel(this.password);
                 if (this.strengthLabelElement) {
                     this.strengthLabelElement.textContent = `Strength: ${newStrengthLabel}`;
@@ -304,10 +299,10 @@ class PasswordModal extends Modal {
                     this.strengthLabelElement.classList.remove('vulnerable', 'weak', 'strong');
                     this.strengthLabelElement.classList.add(newStrengthLabel.toLowerCase());
                 }
-            });
+        });
 
         // Insert Button
-        const insertButton = new ButtonComponent(buttonContainer)
+        new ButtonComponent(buttonContainer)
             .setButtonText('Insert')
             .setIcon('plus-circle')
             .setTooltip('Insert the password into the active note')
@@ -315,9 +310,8 @@ class PasswordModal extends Modal {
                 this.insertPasswordIntoActiveView();
                 new Notice('Password inserted into note', 2000);
                 this.close();
-            });
-            
-        
+        });
+
         // Add space before advanced options
         container.createDiv({ cls: 'pgp-spacing' }); // Add a spacer div
 
@@ -332,13 +326,13 @@ class PasswordModal extends Modal {
 
         const advancedOptionsContainer = container.createDiv({
             cls: 'pgp-advanced-options',
-            attr: { style: 'display: none;' }, // Hide advanced options by default
+            attr: { 'data-visible': 'false' },
         });
 
         // Add event listener to the toggle
         advancedToggle.addEventListener('click', () => {
             this.advancedOptionsVisible = !this.advancedOptionsVisible;
-            advancedOptionsContainer.style.display = this.advancedOptionsVisible ? 'block' : 'none';
+            advancedOptionsContainer.setAttribute('data-visible', this.advancedOptionsVisible ? 'true' : 'false');
         });
 
         // Length Setting

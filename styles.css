@@ -1,20 +1,15 @@
-/*
-
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
-
-If your plugin does not need CSS, delete this file.
-
-*/
-
+/* styles.css */
 
 /* Scoped Styles for Password Generator Plugin */
 .pgp-modal-content {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center; /* Center-align the content */
     width: 90vw;
     max-width: 500px;
+    margin: 0 auto; /* Center the container within its parent */
+    padding: 20px; /* Add padding for better spacing */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 @media (min-width: 600px) {
@@ -23,71 +18,103 @@ If your plugin does not need CSS, delete this file.
     }
 }
 
-/* Strength Bar Styles */
-.pgp-strength-bar {
+/* Password Display Section */
+.pgp-password-section {
     display: flex;
-    gap: 2px;
-    margin-top: 8px;
-}
-
-.pgp-strength-segment {
-    flex: 1;
-    height: 8px;
-    background-color: #ddd;
-    border-radius: 2px;
-    transition: background-color 0.3s;
-}
-
-.pgp-strength-segment.filled {
-    background-color: #4caf50;
-}
-
-/* Button Container Styles */
-.pgp-button-container {
-    margin-top: 20px;
-    display: flex;
+    align-items: center;
     gap: 10px;
-    flex-wrap: wrap;
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%; /* Ensure the section takes the full width of the container */
 }
 
 /* Password Input Styles */
 .pgp-password-input {
-    width: 100%;
+    flex: 1;
     padding: 8px;
     font-size: 16px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
-	margin-bottom: 10px;
+    padding-right: 40px; /* Add space for the visibility toggle */
+    width: 100%; /* Ensure the input takes the full width of the section */
+}
+
+.pgp-password-input[data-type="text"] {
+    -webkit-text-security: none;
+}
+
+.pgp-password-input[data-type="password"] {
+    -webkit-text-security: disc;
 }
 
 /* Visibility Toggle */
 .pgp-visibility-toggle {
-	margin-bottom: 10px;
+    position: absolute;
+    right: 10px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #f0f0f0; /* Optional: Add background color for better visibility */
+}
+
+.pgp-visibility-toggle[data-visibility="hide"]::before {
+    content: 'Hide';
+}
+
+.pgp-visibility-toggle[data-visibility="show"]::before {
+    content: 'Show';
 }
 
 /* Strength Label Styles */
 .pgp-strength-label {
     font-weight: bold;
     margin-top: 4px;
+    text-align: center;
+    width: 100%; /* Ensure the label takes the full width of the container */
 }
 
 .pgp-strength-label.vulnerable {
-    color: red;
+    color: #FF4D4D;
 }
 
 .pgp-strength-label.weak {
-    color: orange;
+    color: #FFA500;
 }
 
 .pgp-strength-label.strong {
-    color: green;
+    color: #4CAF50;
 }
 
-/* Settings Tab Styles */
-.pgp-settings-container {
+/* Button Container Styles */
+.pgp-button-container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     gap: 10px;
+    margin-bottom: 20px;
+    width: 100%; /* Ensure the button container takes the full width of the container */
+}
+
+/* Advanced Options Toggle */
+.pgp-advanced-toggle {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Advanced Options Container */
+.pgp-advanced-options[data-visible="false"] {
+    display: none;
+}
+
+.pgp-advanced-options[data-visible="true"] {
+    display: block;
 }
 
