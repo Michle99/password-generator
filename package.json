@@ -1,7 +1,7 @@
 {
 	"name": "password-generator",
 	"version": "1.0.0",
-	"description": "Password Generator that helps users generate secure, random passwords.",
+	"description": "Helps users generate secure, random passwords.",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
