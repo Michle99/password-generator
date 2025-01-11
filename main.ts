@@ -443,7 +443,7 @@ export default class PasswordGeneratorPlugin extends Plugin {
 
         // Command to open the Password Modal
         this.addCommand({
-            id: 'open-password-generator',
+            id: 'open',
             name: 'Generate Password',
             callback: () => {
                 new PasswordModal(this.app, this.settings).open();
